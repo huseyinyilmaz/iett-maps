@@ -11,9 +11,11 @@ import settings
 import api
 
 
+# create root handler
 root = main.Root()
 
 
+# create api handler
 class Api:
     bus = api.BusHandler()
     busstop = api.BusStopHandler()
