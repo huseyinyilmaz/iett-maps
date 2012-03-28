@@ -40,7 +40,7 @@ $(function(){
     
     mapApp.busCollection.fetch({
 	success:_.bind(function(models,xhr,options){
-	    this.busCollection.add({code:"",no:'Bir hat seciniz'});
+	    this.busCollection.add({code:'',no:'Bir hat seciniz',route:''});
 	    this.busView = new BusView({collection:this.busCollection});
 	    this.busView.render();
 	},mapApp),

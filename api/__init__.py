@@ -5,9 +5,12 @@ import json
 class BusHandler:
     def index(self):
         cherrypy.response.headers['Content-Type'] = 'text/json'
+        lst = [bus['route'] for bus in cherrypy.db.bus.find({}, {'code': 1, 'no': 1, 'route': 1})]
+
+
         return json.dumps(
-            [{'code': bus['code'], 'no': bus['no']}
-             for bus in cherrypy.db.bus.find({}, {'code': 1, 'no': 1})])
+            [{'code': bus['code'], 'no': bus['no'], 'route': bus['route']}
+             for bus in cherrypy.db.bus.find({}, {'code': 1, 'no': 1, 'route': 1})])
 
     index.exposed = True
 

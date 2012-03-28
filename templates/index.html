@@ -52,7 +52,7 @@
 
    <script type="text/template" id="busOptionsTemplate">
      <% options.each(function(e){ %>
-     <option value="<%=e.get('code')%>"> <%=e.get('no')%></option>
+     <option value="<%=e.get('code')%>"> <%=e.get('no') + ' : ' + e.get('route')%></option>
      <%});%>
    </script>
 </head>
