@@ -100,7 +100,7 @@ $(function(){
 			  geojson.on('featureparse', function(e) {
 			      e.layer.bindPopup(e.properties.title);
 			  });
-			  geojson.addGeoJSON(data);
+			  geojson.addData(data);
 			  mapApp.map.addLayer(geojson);			  
 
 		      }
