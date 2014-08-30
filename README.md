@@ -5,11 +5,10 @@ This is source code for [maps.yilmazhuseyin.com](http://maps.yilmazhuseyin.com).
 
 Requirements
 ------------
-* python3.2
-* mongodb
+* python 3
 * cherrypy
 * jinja2
-* pymongo3
+
 
 Deployment
 ----------
@@ -22,5 +21,4 @@ After this run
 
     python.server.py
 
-To run the project. If you need to change database connection variables etc. You can do it from settings.py file.
-
+ 
