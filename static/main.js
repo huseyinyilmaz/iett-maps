@@ -77,12 +77,12 @@ $(function(){
     
 	    mapApp.map = map;
     
-	    // create a CloudMade tile layer
-	    var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/86d0023a1a8a4283b4a901eb512cf615/997/256/{z}/{x}/{y}.png',
-	    cloudmadeLayer = new L.TileLayer(cloudmadeUrl, {maxZoom: 18});
+	    // create tile layer
+            var tileUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
+	    var tileLayer = new L.TileLayer(tileUrl, {maxZoom: 18});
     
 	    // add the CloudMade layer to the map
-	    map.addLayer(cloudmadeLayer);
+	    map.addLayer(tileLayer);
 
 	    
 	},

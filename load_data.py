@@ -9,8 +9,7 @@ def pull_data():
     data = json.load(open(SOURCE_FILE))
 
     # Clear db
-    db.location.drop()
-    db.bus.drop()
+    db.clear()
 
 #    db.location.insert(data['locations'])
     location_dict = dict(map(lambda x: (x['id'], x), data['locations']))
@@ -30,10 +29,9 @@ def pull_data():
     def process_bus(bus):
         bus['busstops'] = list(map(process_busstop, bus['busstops']))
         return bus
-
-    buses = list(map(process_bus, data['buses']))
-
-    db.bus.insert(buses)
+    buses = {bus['code']: bus for bus in map(process_bus, data['buses'])}
+    db.update(buses)
+    db.sync()
 
 
 if __name__ == '__main__':
